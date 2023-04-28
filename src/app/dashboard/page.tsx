@@ -1,12 +1,10 @@
 import Button from '@/components/Button'
-import { FC } from 'react'
+import { authOptions } from '@/lib/auth'
+import { getServerSession } from 'next-auth'
 
-interface pageProps {
-
-}
-
-const page: FC<pageProps> = ({ }) => {
-    return <Button >click here</Button>
+const page = async ({ }) => {
+    const session = await getServerSession(authOptions)
+    return <>click here</>
 }
 
 export default page
